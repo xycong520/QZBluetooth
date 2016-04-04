@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutTitle"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.qz.qizhi.widget.BackButton
+        android:id="@+id/btBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/ibLeft"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/icon_add"
+        android:background="@null"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/btRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="5dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1dp"
+        android:background="@color/div"></View>
+</RelativeLayout>

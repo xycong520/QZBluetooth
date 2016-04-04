@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="60dp"
+        android:minWidth="60dp"
+        android:gravity="center_horizontal"
+        android:drawableBottom="@mipmap/icon_shrink"
+        android:text="jintian" />
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="3dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvDate"
+        android:background="@color/deviceBGStroke"/>
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/viewLine"
+        android:layout_alignTop="@+id/viewLine"
+        android:id="@+id/layout_time_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccc"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</RelativeLayout>

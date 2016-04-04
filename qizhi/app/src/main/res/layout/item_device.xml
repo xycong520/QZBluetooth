@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/icon_device_bg">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="谷箱"
+                android:id="@+id/tvName" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线"
+                android:id="@+id/tvStatus" />
+        </LinearLayout>
+
+        <com.qz.qizhi.widget.MyGridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:padding="2dp"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp"
+            android:background="@color/deviceBGStroke"
+            android:id="@+id/gridViewDeviceFunction">
+        </com.qz.qizhi.widget.MyGridView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="事件"
+                android:drawableTop="@mipmap/icon_event"
+                android:id="@+id/tvEvent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="信息"
+                android:drawableTop="@mipmap/icon_news"
+                android:id="@+id/tvNews"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@mipmap/icon_setting"
+                android:text="设置"
+                android:id="@+id/tvSetting"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@mipmap/icon_share"
+                android:text="分享"
+                android:id="@+id/tvShare"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
