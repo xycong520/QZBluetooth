@@ -210,25 +210,25 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                 break;
 
             case R.id.tvEvent:
-                if (App.manager.cubicBLEDevice != null) {
+//                if (App.manager.cubicBLEDevice != null) {
                     intent = new Intent(mContext, EventActivity.class);
                     intent.putExtra("titleName", "谷箱事件");
-                    intent.putExtra("mac", App.manager.cubicBLEDevice.deviceMac);
+//                    intent.putExtra("mac", App.manager.cubicBLEDevice.deviceMac);
                     startActivity(intent);
-                } else {
-                    ToastUntil.makeText(mContext, "请先连接", Toast.LENGTH_SHORT);
-                }
+//                } else {
+//                    ToastUntil.makeText(mContext, "请先连接", Toast.LENGTH_SHORT);
+//                }
 
                 break;
             case R.id.tvNews:
-                if (App.manager.cubicBLEDevice != null) {
+//                if (App.manager.cubicBLEDevice != null) {
                     intent = new Intent(mContext, NewsActivity.class);
-                    intent.putExtra("mac", App.manager.cubicBLEDevice.deviceMac);
+//                    intent.putExtra("mac", App.manager.cubicBLEDevice.deviceMac);
                     intent.putExtra("titleName", "谷箱信息");
                     startActivity(intent);
-                } else {
-                    ToastUntil.makeText(mContext, "请先连接", Toast.LENGTH_SHORT);
-                }
+//                } else {
+//                    ToastUntil.makeText(mContext, "请先连接", Toast.LENGTH_SHORT);
+//                }
 
                 break;
             case R.id.tvSetting:
