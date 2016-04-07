@@ -56,6 +56,8 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 startActivity(i);
                 break;
             case R.id.tvGrainInfo:
+                i = new Intent(mContext, GrainSetting.class);
+                startActivity(i);
                 //谷物设置
                 break;
             case R.id.tvOutGrain:

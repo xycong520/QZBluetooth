@@ -74,13 +74,13 @@ public class EventActivity extends Activity {
                            boolean isCheck = (boolean) v.getTag(R.id.tvDate);
                            v.setTag(R.id.tvDate, isCheck = !isCheck);
                            if (isCheck) {
-                               textView1.setVisibility(View.GONE);
+                               textView1.setVisibility(View.VISIBLE);
+
 //                               TextView textView = new TextView(mContext);
 //                               textView.setText(String.valueOf(item.getEvents().get(index).get(2)));
 //                               layout.addView(textView,index+1);
                            } else {
-                               textView1.setVisibility(View.VISIBLE);
-
+                               textView1.setVisibility(View.GONE);
 //                               layout.removeViewAt(index+1);
                            }
 
