@@ -46,6 +46,9 @@
         <activity android:name=".EnvironmentSettingActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".OutGrainSettingActivity"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".kevin.main.ModuleParameterActivity"
             android:screenOrientation="portrait"
             />

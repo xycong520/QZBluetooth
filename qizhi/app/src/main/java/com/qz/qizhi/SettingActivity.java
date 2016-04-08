@@ -61,6 +61,8 @@ public class SettingActivity extends Activity implements View.OnClickListener {
                 //谷物设置
                 break;
             case R.id.tvOutGrain:
+                i = new Intent(mContext, OutGrainSettingActivity.class);
+                startActivity(i);
                 //出谷设置
                 break;
         }

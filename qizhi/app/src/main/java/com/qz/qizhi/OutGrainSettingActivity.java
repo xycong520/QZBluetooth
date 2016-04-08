@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.qz.qizhi.adapter.CommonAdapter;
 import com.qz.qizhi.adapter.ViewHolder;
@@ -18,64 +17,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by xycong on 2016/4/7.
+ * Created by Administrator on 2016/4/8.
  */
-public class GrainSetting extends Activity implements View.OnClickListener {
-
-    List<List<String>> granins = new ArrayList<>();
+public class OutGrainSettingActivity extends Activity implements View.OnClickListener {
     List<String> graninsType = new ArrayList<>();
+    List<String> graninsUnit = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_grain_setting);
-        List<String> g1 = new ArrayList<>();
-        g1.add("东北米");
-        g1.add("泰国米");
-        g1.add("五常稻米");
-        granins.add(g1);
-        List<String> g2 = new ArrayList<>();
-        g2.add("红豆");
-        g2.add("绿豆");
-        g2.add("黑豆");
-        granins.add(g2);
-        graninsType.add("大米");
-        graninsType.add("豆类");
+        setContentView(R.layout.layout_out_grain_setting);
+        graninsUnit.add("重量(克)");
+        graninsUnit.add("容量(饭碗)");
+        graninsUnit.add("热量(大卡)");
+        graninsType.add("福临门  籼优1号");
+        graninsType.add("金龙鱼");
+        graninsType.add("稻花香");
         setTitle();
         init();
     }
 
     private void init() {
+        findViewById(R.id.ivUnit).setOnClickListener(this);
         findViewById(R.id.ivType).setOnClickListener(this);
-        findViewById(R.id.ivName).setOnClickListener(this);
     }
 
     private void setTitle() {
         findViewById(R.id.btBack).setVisibility(View.VISIBLE);
-        ((TextView) findViewById(R.id.tvTitle)).setText("谷物设置");
+        ((TextView) findViewById(R.id.tvTitle)).setText("出谷设置");
     }
 
-    int index;
-    boolean isTypeSelect;
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.ivName:
-                if (index == -1){
-                    Toast.makeText(this,"请先选择种类",Toast.LENGTH_SHORT).show();
-                }
-                isTypeSelect = false;
-                showPw(view, (TextView) findViewById(R.id.tvName),granins.get(index));
-                break;
             case R.id.ivType:
-                isTypeSelect = true;
+                isTypeSelect= true;
                 showPw(view, (TextView) findViewById(R.id.tvType),graninsType);
+                break;
+            case R.id.ivUnit:
+                isTypeSelect = false;
+                showPw(view, (TextView) findViewById(R.id.tvUnit),graninsUnit);
                 break;
         }
     }
 
     PopupWindow popupWindow;
-
-    private void showPw(View v, TextView tv, List<String> grainString) {
+boolean isTypeSelect;
+    private void showPw(View v, TextView tv, final List<String> grainString) {
         View view = getLayoutInflater().inflate(R.layout.layout_lv, null);
         if (popupWindow==null){
             popupWindow = new PopupWindow(view, v.getWidth() + tv.getWidth(), LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -98,11 +85,9 @@ public class GrainSetting extends Activity implements View.OnClickListener {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     if (isTypeSelect) {
-                        index = i;
-                        ((TextView) findViewById(R.id.tvType)).setText(graninsType.get(i));
-                        ((TextView) findViewById(R.id.tvName)).setText(granins.get(index).get(0));
+                        ((TextView) findViewById(R.id.tvType)).setText(grainString.get(i));
                     } else {
-                        ((TextView) findViewById(R.id.tvName)).setText(granins.get(index).get(i));
+                        ((TextView) findViewById(R.id.tvUnit)).setText(grainString.get(i));
                     }
                     popupWindow.dismiss();
                 }
