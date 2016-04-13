@@ -8,8 +8,8 @@ public class DeviceFunction {
 
     String funName;
     int funIcon;
-    String funValue;
-    int actionType;//操作指令类型，1 出米，
+    String funValue1,funValue2;
+    int actionType;//操作指令类型，1 出米，2 余米， 3 温度，4 湿度，5 复位，6 监测
     // 0=执行动作0 1=执行动作1  2=获取状态 3=获取参数 4=获取记录  5=设置参数 6=设置时间
 //="HEAD0" 》
 //="HEAD1" 》
@@ -45,11 +45,19 @@ public class DeviceFunction {
         this.funIcon = funIcon;
     }
 
-    public String getFunValue() {
-        return funValue;
+    public String getFunValue1() {
+        return funValue1;
     }
 
-    public void setFunValue(String funValue) {
-        this.funValue = funValue;
+    public void setFunValue1(String funValue1) {
+        this.funValue1 = funValue1;
+    }
+
+    public String getFunValue2() {
+        return funValue2;
+    }
+
+    public void setFunValue2(String funValue2) {
+        this.funValue2 = funValue2;
     }
 }

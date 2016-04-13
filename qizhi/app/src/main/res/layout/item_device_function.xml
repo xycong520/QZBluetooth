@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:gravity="center"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="5dp"
+    >
 
     <ImageView
-        android:id="@+id/ivIcon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/icon_temp"
+        android:id="@+id/ivIcon"/>
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:layout_below="@+id/ivIcon"
+        android:gravity="center"
+        android:text="温度"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ivIcon"
+        android:layout_centerVertical="true"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvValue1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="温度" />
+            android:padding="5dp"
+            android:text=""
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/deviceBGStroke" />
 
         <TextView
-            android:id="@+id/tvValue"
+            android:id="@+id/tvValue2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minLines="2"
-            android:text="温度" />
+            android:padding="5dp"
+            android:text=""
+            android:textSize="14sp" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

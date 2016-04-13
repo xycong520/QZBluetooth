@@ -25,6 +25,7 @@ import com.qz.qizhi.Bean.BeanDevice;
 import com.qz.qizhi.Bean.DeviceFunction;
 import com.qz.qizhi.DBUtils;
 import com.qz.qizhi.EventActivity;
+import com.qz.qizhi.MyAlertDialog;
 import com.qz.qizhi.NewsActivity;
 import com.qz.qizhi.R;
 import com.qz.qizhi.SettingActivity;
@@ -107,8 +108,17 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                 gridView.setAdapter(new CommonAdapter<DeviceFunction>(mContext, item.getFunctions(), R.layout.item_device_function) {
                     @Override
                     public void convert(ViewHolder helper, DeviceFunction item) {
+                        TextView tvName = helper.getView(R.id.tvName);
                         helper.setText(R.id.tvName, item.getFunName());
-                        helper.setText(R.id.tvValue, item.getFunValue());
+
+                        if ("余米".equals(item.getFunName())){
+                            helper.getView(R.id.tvValue1).setBackgroundResource(R.mipmap.icon_weight3);
+                            helper.getView(R.id.tvValue2).setBackgroundResource(R.mipmap.icon_weight3);
+                        }else{
+                            helper.setText(R.id.tvValue1, item.getFunValue1());
+                            helper.setText(R.id.tvValue2, item.getFunValue2());
+                        }
+                        tvName.setText(item.getFunName());
                         if (item.getFunIcon() == 0) {
                             helper.getView(R.id.ivIcon).setVisibility(View.INVISIBLE);
                         } else {
@@ -122,6 +132,22 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         int actionType = (int) view.getTag(R.id.tvEvent);
+                        switch (actionType){
+                            case 1://出米：
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
+//                                startActivity(new Intent(mContext,MyAlertDialog.class));
+                                break;
+                            case 2://余米：
+                                break;
+                            case 3://温度：
+                                break;
+                            case 4://湿度：
+                                break;
+                            case 5://复位：
+                                break;
+                            case 6://监测：
+                                break;
+                        }
                         if (App.manager.cubicBLEDevice != null) {
                             App.manager.cubicBLEDevice.setBLEBroadcastDelegate(FragmentDevice.this);
                             if (actionType == 1) {//出米
@@ -152,34 +178,45 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         device.setType(1);
         DeviceFunction function = device.getFunction();
         function.setFunName("温度");
-        function.setFunValue("16摄氏度");
+        function.setFunValue1("16℃");
+        function.setFunValue2("24℃");
+        function.setActionType(3);
         function.setFunIcon(R.mipmap.icon_temp);
         functions.add(function);
         DeviceFunction function2 = device.getFunction();
         function2.setFunName("余米");
-        function2.setFunValue("1千克");
+        function2.setFunValue1("20");
+        function2.setFunValue2("30");
+        function2.setActionType(2);
         function2.setFunIcon(R.mipmap.icon_mi);
         functions.add(function2);
         DeviceFunction function3 = device.getFunction();
-        function3.setFunName("箱盖");
-        function3.setFunValue("已关闭");
-        function3.setFunIcon(0);
+        function3.setFunName("复位");
+        function3.setFunValue1("复位");
+        function3.setFunValue2("杀菌");
+        function3.setActionType(5);
+        function3.setFunIcon(R.mipmap.icon_reset);
         functions.add(function3);
         DeviceFunction function4 = device.getFunction();
         function4.setFunName("湿度");
-        function4.setFunValue("10%");
-        function4.setFunIcon(R.mipmap.icon_wesd);
+        function4.setActionType(4);
+        function4.setFunValue1("74%");
+        function4.setFunValue2("95%");
+        function4.setFunIcon(R.mipmap.icon_wet);
         functions.add(function4);
         DeviceFunction function5 = device.getFunction();
-        function5.setFunName("上次出米");
-        function5.setFunValue("500g");
-        function5.setFunIcon(0);
+        function5.setFunName("出米");
+        function5.setFunValue1("上次出米");
+        function5.setFunValue2("500g");
+        function5.setFunIcon(R.mipmap.icon_out_grain);
         function5.setActionType(1);
         functions.add(function5);
         DeviceFunction function6 = device.getFunction();
-        function6.setFunName("回仓");
-        function6.setFunValue("");
-        function6.setFunIcon(R.mipmap.icon_cang);
+        function6.setFunName("监测");
+        function6.setActionType(6);
+        function6.setFunValue1("烟雾");
+        function6.setFunValue2("瓦斯");
+        function6.setFunIcon(R.mipmap.icon_jiance);
         functions.add(function6);
         deviceList.add(device);
     }
@@ -266,7 +303,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                             BeanDevice device = deviceList.get(j);
                             for (int k = 0; k < device.getFunctions().size(); k++) {
                                 if (result[i].contains(device.getFunctions().get(k).getFunName())) {
-                                    device.getFunctions().get(k).setFunValue(result[i].replace(device.getFunctions().get(k).getFunName() + "=", "").trim());
+                                    device.getFunctions().get(k).setFunValue2(result[i].replace(device.getFunctions().get(k).getFunName() + "=", "").trim());
                                 }
                             }
                         }
