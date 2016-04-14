@@ -2,6 +2,7 @@ package com.qz.qizhi;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -30,20 +31,20 @@ public class MyAlertDialog implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivGrainbox:
-                if (layoutID == R.layout.layout_dialog_temp){
+                if (layoutID == R.layout.layout_dialog_temp) {
+                    mContext.startActivity(new Intent(mContext, TempDataSettingActivity.class));
+                } else if (layoutID == R.layout.layout_dialog_wet) {
 
-                }else if (layoutID == R.layout.layout_dialog_wet){
-
-                }else if (layoutID == R.layout.layout_dialog_outgrain){
+                } else if (layoutID == R.layout.layout_dialog_outgrain) {
 
                 }
                 break;
             case R.id.ivkitchen:
-                if (layoutID == R.layout.layout_dialog_temp){
+                if (layoutID == R.layout.layout_dialog_temp) {
 
-                }else if (layoutID == R.layout.layout_dialog_wet){
+                } else if (layoutID == R.layout.layout_dialog_wet) {
 
-                }else if (layoutID == R.layout.layout_dialog_outgrain){
+                } else if (layoutID == R.layout.layout_dialog_outgrain) {
 
                 }
                 break;
