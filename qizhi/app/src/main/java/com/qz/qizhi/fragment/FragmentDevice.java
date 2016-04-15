@@ -138,6 +138,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
 //                                startActivity(new Intent(mContext,MyAlertDialog.class));
                                 break;
                             case 2://余米：
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_outgrain);
                                 break;
                             case 3://温度：
                                 break;

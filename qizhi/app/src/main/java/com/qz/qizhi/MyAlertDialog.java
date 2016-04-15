@@ -36,6 +36,7 @@ public class MyAlertDialog implements View.OnClickListener {
                 } else if (layoutID == R.layout.layout_dialog_wet) {
 
                 } else if (layoutID == R.layout.layout_dialog_outgrain) {
+                    mContext.startActivity(new Intent(mContext, GrainSpaceActivity.class));
 
                 }
                 break;

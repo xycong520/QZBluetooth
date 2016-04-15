@@ -9,4 +9,5 @@
     <string name="done">完成</string>
     <string name="add">添加</string>
     <string name="save">保存</string>
+    <string name="grainSpaceDis">注：\n水位线所指档位代表谷物余量\n档：约2斤\n档：约4斤\n档：约6斤\n档：约8斤\n档：约10斤</string>
 </resources>

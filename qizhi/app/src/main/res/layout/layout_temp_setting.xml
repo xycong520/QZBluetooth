@@ -43,227 +43,227 @@
             </RelativeLayout>
 
             <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btWDsetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0077cc"
+                android:padding="5dp"
+                android:text="温度设置"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/btWDsetting"
+                android:padding="5dp"
+                android:text="*厨房温度无法调整" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:text="了解更多" />
+
+            <RelativeLayout
+                android:id="@+id/layoutTemp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/btWDsetting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#0077cc"
-                    android:padding="5dp"
-                    android:text="温度设置"
-                    android:textColor="@color/white" />
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btWDsetting"
+                android:layout_margin="10dp"
+                android:background="@drawable/icon_layout_bg"
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvWDTZ"
                     android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/btWDsetting"
-                    android:padding="5dp"
-                    android:text="*厨房温度无法调整" />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:padding="5dp"
-                    android:text="了解更多" />
+                    android:layout_centerVertical="true"
+                    android:text="温\n度\n调\n整" />
 
-                <RelativeLayout
-                    android:id="@+id/layoutTemp"
+                <TextView
+                    android:id="@+id/tvSX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvWDTZ"
+                    android:padding="@dimen/dimen_15"
+                    android:text="上限" />
+                <LinearLayout
+                    android:id="@+id/layoutSX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/btWDsetting"
-                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/tvSX"
                     android:background="@drawable/icon_layout_bg"
-                    android:padding="10dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
 
-                    <TextView
-                        android:id="@+id/tvWDTZ"
-                        android:layout_marginLeft="10dp"
+                    <Button
+                        android:id="@+id/btSubTempMax"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_sub" />
+
+                    <EditText
+                        android:id="@+id/etTempMax"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="温\n度\n调\n整" />
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:padding="5dp" />
 
-                    <TextView
-                        android:id="@+id/tvSX"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvWDTZ"
-                        android:padding="@dimen/dimen_15"
-                        android:text="上限" />
-                    <LinearLayout
-                        android:id="@+id/layoutSX"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvSX"
-                        android:background="@drawable/icon_layout_bg"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btSubTempMax"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_sub" />
-
-                        <EditText
-                            android:id="@+id/etTempMax"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:padding="5dp" />
-
-                        <Button
-                            android:id="@+id/btAddTempMax"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_temp_add" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btAddTempMax"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_temp_add" />
+                </LinearLayout>
 
 
-                    <TextView
-                        android:id="@+id/tvXX"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvSX"
-                        android:layout_marginTop="5dp"
-                        android:layout_toRightOf="@+id/tvWDTZ"
-                        android:padding="@dimen/dimen_15"
-                        android:text="下限" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvXX"
-                        android:layout_below="@+id/layoutSX"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/icon_layout_bg"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btSubTempMin"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_sub" />
-
-                        <EditText
-                            android:id="@+id/etTempMin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:padding="5dp" />
-
-                        <Button
-                            android:id="@+id/btAddTempMin"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_temp_add" />
-                    </LinearLayout>
-                </RelativeLayout>
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/tvXX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSX"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/tvWDTZ"
+                    android:padding="@dimen/dimen_15"
+                    android:text="下限" />
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/layoutTemp"
-                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/tvXX"
+                    android:layout_below="@+id/layoutSX"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/icon_layout_bg"
-                    android:padding="10dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
 
-                    <TextView
-                        android:id="@+id/tvWDJS"
-                        android:layout_marginLeft="10dp"
+                    <Button
+                        android:id="@+id/btSubTempMin"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_sub" />
+
+                    <EditText
+                        android:id="@+id/etTempMin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="温\n度\n警\n示" />
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:padding="5dp" />
 
-                    <TextView
-                        android:id="@+id/tvGrainBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvWDJS"
-                        android:padding="@dimen/dimen_15"
-                        android:text="谷箱" />
-                    <LinearLayout
-                        android:id="@+id/layoutJS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvGrainBox"
-                        android:background="@drawable/icon_layout_bg"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btSubTempBox"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_sub" />
-
-                        <EditText
-                            android:id="@+id/etTempBox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:padding="5dp" />
-
-                        <Button
-                            android:id="@+id/btAddTempBox"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_temp_add" />
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:id="@+id/tvKitchen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvGrainBox"
-                        android:layout_marginTop="5dp"
-                        android:layout_toRightOf="@+id/tvWDJS"
-                        android:padding="@dimen/dimen_15"
-                        android:text="厨房" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvKitchen"
-                        android:layout_below="@+id/layoutJS"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/icon_layout_bg"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btSubTempKitchen"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_sub" />
-
-                        <EditText
-                            android:id="@+id/etTempKitchen"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:padding="5dp" />
-
-                        <Button
-                            android:id="@+id/btAddTempKitchen"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@mipmap/icon_temp_add" />
-                    </LinearLayout>
-                </RelativeLayout>
+                    <Button
+                        android:id="@+id/btAddTempMin"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_temp_add" />
+                </LinearLayout>
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutTemp"
+                android:layout_margin="10dp"
+                android:background="@drawable/icon_layout_bg"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tvWDJS"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="温\n度\n警\n示" />
+
+                <TextView
+                    android:id="@+id/tvGrainBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvWDJS"
+                    android:padding="@dimen/dimen_15"
+                    android:text="谷箱" />
+                <LinearLayout
+                    android:id="@+id/layoutJS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvGrainBox"
+                    android:background="@drawable/icon_layout_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/btSubTempBox"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_sub" />
+
+                    <EditText
+                        android:id="@+id/etTempBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:padding="5dp" />
+
+                    <Button
+                        android:id="@+id/btAddTempBox"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_temp_add" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvKitchen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvGrainBox"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/tvWDJS"
+                    android:padding="@dimen/dimen_15"
+                    android:text="厨房" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvKitchen"
+                    android:layout_below="@+id/layoutJS"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/icon_layout_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/btSubTempKitchen"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_sub" />
+
+                    <EditText
+                        android:id="@+id/etTempKitchen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:padding="5dp" />
+
+                    <Button
+                        android:id="@+id/btAddTempKitchen"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/icon_temp_add" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
