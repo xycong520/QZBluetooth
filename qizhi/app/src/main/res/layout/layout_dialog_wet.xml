@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivGrainbox"
                 android:layout_marginTop="10dp"
-                android:text="箱内温度" />
+                android:text="箱内湿度" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                 android:layout_alignLeft="@+id/ivkitchen"
                 android:layout_below="@+id/ivkitchen"
                 android:layout_marginTop="10dp"
-                android:text="厨房温度" />
+                android:text="厨房湿度" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

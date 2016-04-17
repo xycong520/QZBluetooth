@@ -10,55 +10,111 @@
         android:layout_height="wrap_content"
         android:background="@drawable/icon_dialog_layout_bg"
         android:gravity="center_horizontal"
-        android:padding="@dimen/dimen_10"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_10"
-            android:text="余米 / 存米" />
+            android:text="出米 / 设置" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/deviceBGStroke" />
 
-        <RelativeLayout
+        <RadioGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/ivGrainbox"
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/icon_grainbox" />
+                android:layout_margin="10dp"
+                android:button="@null"
+                android:drawableBottom="@drawable/icon_radiobutton"
+                android:drawableTop="@mipmap/icon_weight"
+                android:text="按重量" />
 
-            <ImageView
-                android:id="@+id/ivkitchen"
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ivGrainbox"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="50dp"
-                android:layout_toRightOf="@+id/ivGrainbox"
-                android:src="@mipmap/icon_grainpage" />
+                android:layout_margin="10dp"
+                android:button="@null"
+                android:drawableBottom="@drawable/icon_radiobutton"
+                android:drawableTop="@mipmap/icon_bowl"
+                android:text="按饭碗" />
 
-            <TextView
-                android:id="@+id/tvbox"
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivGrainbox"
-                android:layout_marginTop="10dp"
-                android:text="箱内温度" />
+                android:layout_margin="10dp"
+                android:button="@null"
+                android:drawableBottom="@drawable/icon_radiobutton"
+                android:drawableTop="@mipmap/icon_people"
+                android:text="按人数" />
 
-            <TextView
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/ivkitchen"
-                android:layout_below="@+id/ivkitchen"
-                android:layout_marginTop="10dp"
-                android:text="厨房温度" />
-        </RelativeLayout>
+                android:layout_margin="10dp"
+                android:button="@null"
+                android:drawableBottom="@drawable/icon_radiobutton"
+                android:drawableTop="@mipmap/icon_cal"
+                android:text="按大卡" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_toRightOf="@+id/tvSX"
+                android:background="@drawable/icon_layout_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btSub"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@mipmap/icon_sub" />
+
+                <EditText
+                    android:id="@+id/etNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:padding="5dp" />
+
+                <Button
+                    android:id="@+id/btAdd"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@mipmap/icon_temp_add" />
+            </LinearLayout>
+            <Button
+                android:layout_width="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/icon_sure"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="*水：粥-1000ml、饭260ml"/>
     </LinearLayout>
+
 </LinearLayout>

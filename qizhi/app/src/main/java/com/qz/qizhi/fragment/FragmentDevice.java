@@ -134,13 +134,14 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                         int actionType = (int) view.getTag(R.id.tvEvent);
                         switch (actionType){
                             case 1://出米：
-                                new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_outgrain);
 //                                startActivity(new Intent(mContext,MyAlertDialog.class));
                                 break;
                             case 2://余米：
-                                new MyAlertDialog(mContext,R.layout.layout_dialog_outgrain);
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_keepingrain);
                                 break;
                             case 3://温度：
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
                                 break;
                             case 4://湿度：
                                 break;
@@ -149,14 +150,14 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                             case 6://监测：
                                 break;
                         }
-                        if (App.manager.cubicBLEDevice != null) {
-                            App.manager.cubicBLEDevice.setBLEBroadcastDelegate(FragmentDevice.this);
-                            if (actionType == 1) {//出米
-                                App.manager.cubicBLEDevice.writeValue("ffe5", "ffe9", "HEAD0".getBytes());
-                            }
-                        } else {
-                            Toast.makeText(mContext, "请先连接设备", Toast.LENGTH_SHORT).show();
-                        }
+//                        if (App.manager.cubicBLEDevice != null) {
+//                            App.manager.cubicBLEDevice.setBLEBroadcastDelegate(FragmentDevice.this);
+//                            if (actionType == 1) {//出米
+//                                App.manager.cubicBLEDevice.writeValue("ffe5", "ffe9", "HEAD0".getBytes());
+//                            }
+//                        } else {
+//                            Toast.makeText(mContext, "请先连接设备", Toast.LENGTH_SHORT).show();
+//                        }
                     }
                 });
             }

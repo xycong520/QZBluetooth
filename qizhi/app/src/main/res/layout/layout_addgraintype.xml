@@ -34,6 +34,8 @@
                     android:id="@+id/etNum"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:maxWidth="100dp"
+                    android:singleLine="true"
                     android:layout_margin="@dimen/dimen_10"
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
@@ -410,8 +412,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rbYD"
-                    android:layout_toLeftOf="@+id/rbND"
+                    android:layout_below="@+id/rbND"
+                    android:layout_toLeftOf="@+id/rbYD"
                     android:padding="@dimen/dimen_10"
                     android:text="硬度" />
 
@@ -421,14 +423,14 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/rbYD" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rbSD"
-                    android:layout_toLeftOf="@+id/rbND"
+                    android:layout_below="@+id/rbYD"
+                    android:layout_toLeftOf="@+id/rbSD"
                     android:padding="@dimen/dimen_10"
                     android:text="色度" />
+
 
                 <RatingBar
                     android:id="@+id/rbXT"
@@ -440,8 +442,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rbXT"
-                    android:layout_toLeftOf="@+id/rbND"
+                    android:layout_below="@+id/rbSD"
+                    android:layout_toLeftOf="@+id/rbXT"
                     android:padding="@dimen/dimen_10"
                     android:text="形态" />
 

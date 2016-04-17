@@ -23,8 +23,10 @@ public class MyAlertDialog implements View.OnClickListener {
         dialog = new AlertDialog.Builder(mContext).create();
         dialog.show();
         dialog.getWindow().setContentView(view);
-        view.findViewById(R.id.ivGrainbox).setOnClickListener(this);
-        view.findViewById(R.id.ivkitchen).setOnClickListener(this);
+        if (layoutID!=R.layout.layout_dialog_outgrain){
+            view.findViewById(R.id.ivkitchen).setOnClickListener(this);
+            view.findViewById(R.id.ivGrainbox).setOnClickListener(this);
+        }
     }
 
     @Override
@@ -35,7 +37,7 @@ public class MyAlertDialog implements View.OnClickListener {
                     mContext.startActivity(new Intent(mContext, TempDataSettingActivity.class));
                 } else if (layoutID == R.layout.layout_dialog_wet) {
 
-                } else if (layoutID == R.layout.layout_dialog_outgrain) {
+                } else if (layoutID == R.layout.layout_dialog_keepingrain) {
                     mContext.startActivity(new Intent(mContext, GrainSpaceActivity.class));
 
                 }
@@ -45,8 +47,8 @@ public class MyAlertDialog implements View.OnClickListener {
 
                 } else if (layoutID == R.layout.layout_dialog_wet) {
 
-                } else if (layoutID == R.layout.layout_dialog_outgrain) {
-
+                } else if (layoutID == R.layout.layout_dialog_keepingrain) {//存米
+                    mContext.startActivity(new Intent(mContext,SaveGrainActivity.class));
                 }
                 break;
         }

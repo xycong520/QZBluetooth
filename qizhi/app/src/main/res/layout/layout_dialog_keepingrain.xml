@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_10"
-            android:text="查看 / 调整" />
+            android:text="余米 / 存米" />
 
         <View
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:id="@+id/ivGrainbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/icon_grainbox2" />
+                android:src="@mipmap/icon_grainbox" />
 
             <ImageView
                 android:id="@+id/ivkitchen"
@@ -43,23 +43,21 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@+id/ivGrainbox"
-                android:src="@mipmap/icon_kitchen" />
+                android:src="@mipmap/icon_grainpage" />
 
             <TextView
                 android:id="@+id/tvbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivGrainbox"
-                android:layout_marginTop="10dp"
-                android:text="箱内温度" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/ivkitchen"
                 android:layout_below="@+id/ivkitchen"
-                android:layout_marginTop="10dp"
-                android:text="厨房温度" />
+                android:layout_marginTop="10dp" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
