@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_10"
-            android:text="查看 / 调整" />
+            android:text="复位 / 杀菌" />
 
         <View
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:id="@+id/ivLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/icon_grainbox2" />
+                android:src="@mipmap/icon_reset" />
 
             <ImageView
                 android:id="@+id/ivRight"
@@ -43,23 +43,28 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@+id/ivLeft"
-                android:src="@mipmap/icon_kitchen" />
+                android:src="@mipmap/icon_sj" />
 
             <TextView
-                android:id="@+id/tvbox"
+                android:id="@+id/tvReset"
+                android:text="复位"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivLeft"
-                android:layout_marginTop="10dp"
-                android:text="箱内温度" />
+                android:layout_alignRight="@+id/ivLeft"
+                android:layout_alignLeft="@+id/ivLeft"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="杀菌"
                 android:layout_alignLeft="@+id/ivRight"
+                android:layout_alignRight="@+id/ivRight"
+                android:gravity="center_horizontal"
                 android:layout_below="@+id/ivRight"
-                android:layout_marginTop="10dp"
-                android:text="厨房温度" />
+                android:layout_marginTop="10dp" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

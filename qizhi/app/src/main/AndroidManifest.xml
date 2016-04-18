@@ -55,6 +55,15 @@
         <activity android:name=".GrainSpaceActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".ShajunActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".JianceActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ResetActivity"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".SaveGrainActivity"
             android:screenOrientation="portrait"
             />

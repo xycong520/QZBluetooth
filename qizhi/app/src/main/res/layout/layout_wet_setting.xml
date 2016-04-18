@@ -25,14 +25,14 @@
                     android:layout_height="wrap_content"
                     android:background="#0077cc"
                     android:padding="5dp"
-                    android:text="机内温度"
+                    android:text="机内湿度"
                     android:textColor="@color/white" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/btRecord"
-                    android:text="厨房温度"
+                    android:text="厨房湿度"
                     android:checked="false"
                     android:id="@+id/cbKitchen" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:background="#0077cc"
                 android:padding="5dp"
-                android:text="温度设置"
+                android:text="湿度设置"
                 android:textColor="@color/white" />
 
             <TextView
@@ -63,7 +63,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/btWDsetting"
                 android:padding="5dp"
-                android:text="*厨房温度无法调整" />
+                android:text="*厨房湿度无法调整" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="温\n度\n调\n整" />
+                    android:text="湿\n度\n调\n整" />
 
                 <TextView
                     android:id="@+id/tvSX"
@@ -183,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="温\n度\n警\n示" />
+                    android:text="湿\n度\n警\n示" />
 
                 <TextView
                     android:id="@+id/tvGrainBox"

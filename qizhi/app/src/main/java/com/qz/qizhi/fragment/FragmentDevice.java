@@ -25,6 +25,7 @@ import com.qz.qizhi.Bean.BeanDevice;
 import com.qz.qizhi.Bean.DeviceFunction;
 import com.qz.qizhi.DBUtils;
 import com.qz.qizhi.EventActivity;
+import com.qz.qizhi.JianceActivity;
 import com.qz.qizhi.MyAlertDialog;
 import com.qz.qizhi.NewsActivity;
 import com.qz.qizhi.R;
@@ -135,7 +136,6 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                         switch (actionType){
                             case 1://出米：
                                 new MyAlertDialog(mContext,R.layout.layout_dialog_outgrain);
-//                                startActivity(new Intent(mContext,MyAlertDialog.class));
                                 break;
                             case 2://余米：
                                 new MyAlertDialog(mContext,R.layout.layout_dialog_keepingrain);
@@ -144,10 +144,13 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                                 new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
                                 break;
                             case 4://湿度：
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_wet);
                                 break;
                             case 5://复位：
+                                new MyAlertDialog(mContext,R.layout.layout_dialog_reset);
                                 break;
                             case 6://监测：
+                                startActivity(new Intent(mContext, JianceActivity.class));
                                 break;
                         }
 //                        if (App.manager.cubicBLEDevice != null) {

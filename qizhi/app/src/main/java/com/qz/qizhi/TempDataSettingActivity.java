@@ -23,16 +23,22 @@ import java.util.Random;
  * Created by Administrator on 2016/4/14.
  */
 public class TempDataSettingActivity extends Activity{
+    String title = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_temp_setting);
+        title = getIntent().getStringExtra("title");
+        if ("温度".equals(title)){
+            setContentView(R.layout.layout_temp_setting);
+        }else{
+            setContentView(R.layout.layout_wet_setting);
+        }
         setTitle();
         init();
     }
 
     private void setTitle(){
-        ((TextView)findViewById(R.id.tvTitle)).setText("温度");
+        ((TextView)findViewById(R.id.tvTitle)).setText(title);
         findViewById(R.id.btBack).setVisibility(View.VISIBLE);
     }
 
@@ -41,10 +47,10 @@ public class TempDataSettingActivity extends Activity{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 isEnvironmentSelect = isChecked;
-                getMultiLineChart("温度","");
+                getMultiLineChart(title,"");
             }
         });
-        getMultiLineChart("温度", "");
+        getMultiLineChart(title, "");
     }
 
     boolean isEnvironmentSelect;

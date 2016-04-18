@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#0077cc"
+                    android:padding="5dp"
+                    android:text="出谷记录"
+                    android:textColor="@color/white" />
+
+                <CheckBox
+                    android:id="@+id/cbChart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:checked="false"
+                    android:text="曲线" />
+
+                <CheckBox
+                    android:id="@+id/cbNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/cbChart"
+                    android:checked="true"
+                    android:text="数值" />
+
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/barchat"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <GridView
+                android:id="@+id/gridlayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:numColumns="8"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btWDsetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#0077cc"
+                    android:padding="5dp"
+                    android:text="出谷设置"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/icon_radiobutton"
+                    android:padding="5dp"
+                    android:text="水米比提示" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btWDsetting"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/icon_layout_bg"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/tvSX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tvWDTZ"
+                        android:padding="@dimen/dimen_15"
+                        android:text="碗的容量" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutSX"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tvSX"
+                        android:background="@drawable/icon_layout_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <Button
+                            android:id="@+id/btSubTempMax"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@mipmap/icon_sub" />
+
+                        <EditText
+                            android:id="@+id/etBowlMax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:padding="5dp" />
+
+                        <Button
+                            android:id="@+id/btAddTempMax"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@mipmap/icon_temp_add" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/layoutSX"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/deviceBGStroke" />
+
+                    <TextView
+
+                        android:id="@+id/tvFL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/line1"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/tvWDTZ"
+                        android:padding="@dimen/dimen_15"
+                        android:text="个人饭量" />
+
+                    <RadioGroup
+                        android:id="@+id/rgCookType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tvFL"
+                        android:layout_below="@+id/tvFL">
+
+                        <RadioButton
+                            android:id="@+id/rbZhou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/icon_radiobutton"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="粥" />
+
+                        <RadioButton
+                            android:id="@+id/rbFan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/icon_radiobutton"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="饭" />
+                    </RadioGroup>
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/rgCookType"
+                        android:layout_alignTop="@+id/tvFL"
+                        android:layout_toRightOf="@+id/tvFL"
+                        android:background="@color/deviceBGStroke" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutPeople"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/line2"
+                        android:layout_toRightOf="@+id/line2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvWDTZ"
+                                android:padding="@dimen/dimen_15"
+                                android:text="爸爸" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutSX"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvSX"
+                                android:background="@drawable/icon_layout_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_sub" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:padding="5dp" />
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_temp_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvWDTZ"
+                                android:padding="@dimen/dimen_15"
+                                android:text="妈妈" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvSX"
+                                android:background="@drawable/icon_layout_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_sub" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:padding="5dp" />
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_temp_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvWDTZ"
+                                android:padding="@dimen/dimen_15"
+                                android:text="儿子" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tvSX"
+                                android:background="@drawable/icon_layout_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_sub" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:padding="5dp" />
+
+                                <Button
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@mipmap/icon_temp_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/layoutPeople"
+                        android:layout_below="@+id/layoutPeople"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/icon_temp_add" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

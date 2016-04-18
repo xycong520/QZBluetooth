@@ -14,9 +14,11 @@
         android:padding="@dimen/dimen_10">
 
         <TextView
+            android:id="@+id/tvSetting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_10"
+            android:drawableRight="@mipmap/icon_setting"
             android:text="出米 / 设置" />
 
         <View
@@ -25,42 +27,48 @@
             android:background="@color/deviceBGStroke" />
 
         <RadioGroup
+            android:id="@+id/rgOutGrain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <RadioButton
+                android:id="@+id/rbWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
+                android:checked="true"
                 android:button="@null"
                 android:drawableBottom="@drawable/icon_radiobutton"
                 android:drawableTop="@mipmap/icon_weight"
                 android:text="按重量" />
 
             <RadioButton
+                android:id="@+id/rbBowl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:button="@null"
                 android:drawableBottom="@drawable/icon_radiobutton"
                 android:drawableTop="@mipmap/icon_bowl"
                 android:text="按饭碗" />
 
             <RadioButton
+                android:id="@+id/rbPeople"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:button="@null"
                 android:drawableBottom="@drawable/icon_radiobutton"
                 android:drawableTop="@mipmap/icon_people"
                 android:text="按人数" />
 
             <RadioButton
+                android:id="@+id/rbCal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:button="@null"
                 android:drawableBottom="@drawable/icon_radiobutton"
                 android:drawableTop="@mipmap/icon_cal"
@@ -73,6 +81,16 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
             <LinearLayout
+                android:id="@+id/layoutPeople"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutNum"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"
@@ -91,9 +109,12 @@
 
                 <EditText
                     android:id="@+id/etNum"
+                    android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="200克"
                     android:background="@null"
                     android:padding="5dp" />
 
@@ -104,6 +125,7 @@
                     android:background="@mipmap/icon_temp_add" />
             </LinearLayout>
             <Button
+                android:id="@+id/btSure"
                 android:layout_width="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_height="40dp"

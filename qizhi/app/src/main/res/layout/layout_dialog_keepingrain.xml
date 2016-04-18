@@ -30,33 +30,33 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/ivGrainbox"
+                android:id="@+id/ivLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/icon_grainbox" />
 
             <ImageView
-                android:id="@+id/ivkitchen"
+                android:id="@+id/ivRight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ivGrainbox"
+                android:layout_alignBottom="@+id/ivLeft"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
-                android:layout_toRightOf="@+id/ivGrainbox"
+                android:layout_toRightOf="@+id/ivLeft"
                 android:src="@mipmap/icon_grainpage" />
 
             <TextView
                 android:id="@+id/tvbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivGrainbox"
+                android:layout_below="@+id/ivLeft"
                 android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/ivkitchen"
-                android:layout_below="@+id/ivkitchen"
+                android:layout_alignLeft="@+id/ivRight"
+                android:layout_below="@+id/ivRight"
                 android:layout_marginTop="10dp" />
         </RelativeLayout>
     </LinearLayout>
