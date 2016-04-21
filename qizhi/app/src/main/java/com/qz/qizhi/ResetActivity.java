@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -19,6 +20,7 @@ import com.github.mikephil.charting.formatter.FillFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.qz.qizhi.kevin.app.App;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ import java.util.Random;
 /**
  * Created by Administrator on 2016/4/18.
  */
-public class ResetActivity extends Activity{
+public class ResetActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +42,15 @@ public class ResetActivity extends Activity{
     }
 
     private void init() {
-        getBarChartView("","");
+        getBarChartView("", "");
+        findViewById(R.id.btAddCC).setOnClickListener(this);
+        findViewById(R.id.btSubCC).setOnClickListener(this);
+        findViewById(R.id.btAddKG).setOnClickListener(this);
+        findViewById(R.id.btSubKG).setOnClickListener(this);
     }
 
     private void setTitle() {
-        ((TextView)findViewById(R.id.tvTitle)).setText("复位");
+        ((TextView) findViewById(R.id.tvTitle)).setText("复位");
         findViewById(R.id.btBack).setVisibility(View.VISIBLE);
     }
 
@@ -128,5 +134,23 @@ public class ResetActivity extends Activity{
 
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btSubKG:
+                App.setValue((EditText) findViewById(R.id.etKG),false,"分钟");
+                break;
+            case R.id.btAddKG:
+                App.setValue((EditText) findViewById(R.id.etKG),true,"分钟");
+                break;
+            case R.id.btSubCC:
+                App.setValue((EditText) findViewById(R.id.etCC),false,"分钟");
+                break;
+            case R.id.btAddCC:
+                App.setValue((EditText) findViewById(R.id.etCC),true,"分钟");
+                break;
+        }
     }
 }

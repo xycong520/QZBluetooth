@@ -1,6 +1,9 @@
 package com.qz.qizhi;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -23,6 +26,9 @@ public class MainActivity  extends FragmentActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("addGrain");
+        registerReceiver(mBroadcast,filter);
         init();
         ((RadioGroup) findViewById(R.id.rg_tab)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -77,5 +83,16 @@ public class MainActivity  extends FragmentActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unregisterReceiver(mBroadcast);
     }
+
+
+    BroadcastReceiver mBroadcast = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if ("addGrain".equals(intent.getAction())){
+                fragmentDevice.initData();
+            }
+        }
+    };
 }

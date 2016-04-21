@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.qz.qizhi.AddDeviceActivity;
 import com.qz.qizhi.Bean.BeanDevice;
 import com.qz.qizhi.Bean.DeviceFunction;
 import com.qz.qizhi.DBUtils;
@@ -33,7 +34,6 @@ import com.qz.qizhi.SettingActivity;
 import com.qz.qizhi.adapter.CommonAdapter;
 import com.qz.qizhi.adapter.ViewHolder;
 import com.qz.qizhi.kevin.app.App;
-import com.qz.qizhi.kevin.main.SearchActivity;
 import com.qz.qizhi.kevin.params.BLEDevice;
 import com.qz.qizhi.kevin.service.RFStarBLEService;
 import com.qz.qizhi.kevin.view.ToastUntil;
@@ -86,10 +86,11 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
     BaseAdapter adapter;
 
     private void init() {
+
         setTitle();
         mListView = (ListView) mLayout.findViewById(R.id.lvDivice);
         deviceList = new ArrayList<BeanDevice>();
-        initDate();
+//        initDate();
         adapter = new CommonAdapter<BeanDevice>(mContext, deviceList, R.layout.item_device) {
             @Override
             public void convert(ViewHolder holper, BeanDevice item) {
@@ -168,7 +169,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         mListView.setAdapter(adapter);
     }
 
-    private void initDate() {
+    public void initData() {
         //获取连接后设备的保存数据
         BeanDevice device = new BeanDevice();
         try {
@@ -224,6 +225,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         function6.setFunIcon(R.mipmap.icon_jiance);
         functions.add(function6);
         deviceList.add(device);
+        adapter.notifyDataSetChanged();
     }
 
     /**
@@ -240,12 +242,14 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         Intent intent;
         switch (v.getId()) {
             case R.id.ibLeft:
-                if (App.manager.isOpen()) {
-                    intent = new Intent(mContext, SearchActivity.class);
-                    getActivity().startActivityForResult(intent, Activity.RESULT_FIRST_USER);
-                } else {
-                    App.manager.openBluetooth(getActivity());
-                }
+                startActivity(new Intent(mContext, AddDeviceActivity.class));
+
+//                if (App.manager.isOpen()) {
+//                    intent = new Intent(mContext, SearchActivity.class);
+//                    getActivity().startActivityForResult(intent, Activity.RESULT_FIRST_USER);
+//                } else {
+//                    App.manager.openBluetooth(getActivity());
+//                }
                 break;
             case R.id.btRight:
                 update();

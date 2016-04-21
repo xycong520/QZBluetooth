@@ -38,51 +38,59 @@
                     android:padding="10dp">
 
                     <RadioButton
+                        style="@style/radiobutton_"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:drawableLeft="@drawable/icon_radiobutton"
                         android:text="默认" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:button="@null"
-                        android:drawableLeft="@drawable/icon_radiobutton"
+                        style="@style/radiobutton_"
                         android:text="手动" />
                 </RadioGroup>
             </RelativeLayout>
 
             <CheckBox
+                style="@style/checkbox_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:text="湿度超过90% 且超湿时长为1天" />
 
             <CheckBox
+                style="@style/checkbox_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:text="温度超过30℃ 且超温时长为1天" />
 
             <CheckBox
+                style="@style/checkbox_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:text="每15天执行一次" />
 
             <CheckBox
+                style="@style/checkbox_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:text="新米入仓" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="*条件限制\n盖子打开、正在出米、米位最低" />
+                android:textColor="#000"
+                android:padding="10dp"
+                android:text="* 条件限制\n  盖子打开、正在出米、米位最低" />
 
         </LinearLayout>
     </ScrollView>

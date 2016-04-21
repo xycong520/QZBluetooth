@@ -64,6 +64,15 @@
         <activity android:name=".ResetActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".BindDeviceActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".AddDeviceActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".BindDeviceWaiting"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".SaveGrainActivity"
             android:screenOrientation="portrait"
             />

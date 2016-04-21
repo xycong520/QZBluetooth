@@ -111,7 +111,7 @@
                         android:padding="5dp" />
 
                     <Button
-                        android:id="@+id/btKG"
+                        android:id="@+id/btAddKG"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@mipmap/icon_temp_add" />

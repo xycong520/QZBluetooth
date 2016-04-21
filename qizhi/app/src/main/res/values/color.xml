@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <color name="colorBlue">#1ebffb</color>
+    <color name="colorSelectDateText">#1576a5</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="submitLahyout">#FFFFCC</color>

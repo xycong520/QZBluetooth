@@ -105,6 +105,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_weight">1</item>
     </style>
+
     <style name="RadioButton">
         <item name="android:button">@null</item>
         <item name="android:layout_weight">1</item>
@@ -113,4 +114,20 @@
         <item name="android:background">@drawable/tab_background_selector</item>
     </style>
 
+    <style name="editInputNumber">
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="radiobutton_">
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/icon_radiobutton</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+    <style name="checkbox_">
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/icon_checkbox</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
 </resources>

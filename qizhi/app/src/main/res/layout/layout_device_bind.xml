@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:text="设置设备WIFI" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/icon_layout_bg"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etAccount"
+            style="@style/editInputNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="WIFI帐号"
+            android:padding="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#5555" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/editInputNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="WIFI密码"
+            android:padding="20dp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#00b0f0"
+        android:text="下一步"
+        android:id="@+id/btNext"
+        android:padding="20dp"
+        />
+</LinearLayout>

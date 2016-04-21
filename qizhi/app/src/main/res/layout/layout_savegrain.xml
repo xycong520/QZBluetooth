@@ -37,7 +37,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="大米" />
+                    android:text="大米"
+                    android:textColor="@color/black" />
 
 
                 <ImageButton
@@ -71,7 +72,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="2016年4月15日" />
+                    android:text="2016年4月15日"
+                    android:textColor="@color/black" />
 
 
             </LinearLayout>
@@ -90,7 +92,7 @@
                     android:minWidth="100dp"
                     android:text="保质期" />
 
-                <TextView
+                <EditText
                     android:id="@+id/tvSaveTime"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -98,7 +100,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="3个月" />
+                    android:text="3个月"
+                    android:textColor="@color/black" />
 
 
             </LinearLayout>
@@ -125,7 +128,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="2016年4月15日" />
+                    android:text="2016年4月15日"
+                    android:textColor="@color/black" />
 
 
             </LinearLayout>
@@ -152,7 +156,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="5KG" />
+                    android:text="5KG"
+                    android:textColor="@color/black" />
 
 
                 <ImageButton
@@ -186,7 +191,7 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="一年？？" />
+                    android:text="" />
 
 
             </LinearLayout>
@@ -240,7 +245,8 @@
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="①舱" />
+                    android:text="①舱"
+                    android:textColor="@color/black" />
 
 
                 <ImageButton

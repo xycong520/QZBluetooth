@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,6 +22,7 @@ import com.github.mikephil.charting.formatter.FillFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.qz.qizhi.kevin.app.App;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ import java.util.Random;
 /**
  * Created by Administrator on 2016/4/18.
  */
-public class JianceActivity extends Activity {
+public class JianceActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,11 @@ public class JianceActivity extends Activity {
     CheckBox cbChart, cbNum;
 
     private void init() {
+        findViewById(R.id.btYW).setOnClickListener(this);
+        findViewById(R.id.btSubYW).setOnClickListener(this);
+        findViewById(R.id.btSubWS).setOnClickListener(this);
+        findViewById(R.id.btADDWS).setOnClickListener(this);
+
         final LineChart lc = (LineChart) getBarChartView("曲线", "");
         final BarChart bc = (BarChart) getBarChartView("", "");
         cbNum = (CheckBox) findViewById(R.id.cbNum);
@@ -149,6 +156,24 @@ public class JianceActivity extends Activity {
                 barChart.setData(data);
                 barChart.setDescription(description);
                 return barChart;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btYW:
+                App.setValue((EditText) findViewById(R.id.etYW),true,"ppm");
+                break;
+            case R.id.btSubYW:
+                App.setValue((EditText) findViewById(R.id.etYW),false,"ppm");
+                break;
+            case R.id.btSubWS:
+                App.setValue((EditText) findViewById(R.id.etWS),false,"ppm");
+                break;
+            case R.id.btADDWS:
+                App.setValue((EditText) findViewById(R.id.etWS),true,"ppm");
+                break;
         }
     }
 }

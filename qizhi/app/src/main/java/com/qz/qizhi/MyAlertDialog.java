@@ -74,6 +74,7 @@ public class MyAlertDialog implements View.OnClickListener {
                             selectPeopleList = new ArrayList<String>();
                             for (int i = 0; i < 3; i++) {
                                 CheckBox checkBox = new CheckBox(mContext);
+                                checkBox.setButtonDrawable(R.drawable.icon_checkbox);
                                 checkBox.setText(peopleString[i]);
                                 checkBox.setTag(peopleString[i]);
                                 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
