@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -26,7 +25,7 @@ import java.util.Random;
  */
 public class TempDataSettingActivity extends Activity implements View.OnClickListener {
     String title = "";
-    EditText etTempMax, etTempMin, etTempBox, etTempkitchen;
+    TextView etTempMax, etTempMin, etTempBox, etTempkitchen;
     String unit = "℃";
 
     @Override
@@ -65,10 +64,10 @@ public class TempDataSettingActivity extends Activity implements View.OnClickLis
         findViewById(R.id.btSubTempBox).setOnClickListener(this);
         findViewById(R.id.btAddTempKitchen).setOnClickListener(this);
         findViewById(R.id.btSubTempKitchen).setOnClickListener(this);
-        etTempMax = (EditText) findViewById(R.id.etTempMax);
-        etTempMin = (EditText) findViewById(R.id.etTempMin);
-        etTempBox = (EditText) findViewById(R.id.etTempBox);
-        etTempkitchen = (EditText) findViewById(R.id.etTempKitchen);
+        etTempMax = (TextView) findViewById(R.id.tvTempMax);
+        etTempMin = (TextView) findViewById(R.id.tvTempMin);
+        etTempBox = (TextView) findViewById(R.id.tvTempBox);
+        etTempkitchen = (TextView) findViewById(R.id.tvTempKitchen);
         getMultiLineChart(title, "");
 
     }
@@ -94,15 +93,14 @@ public class TempDataSettingActivity extends Activity implements View.OnClickLis
         }
         ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
         for (int z = 0; z < 2; z++) {
-
             if (z == 1 && !isEnvironmentSelect) {
                 break;
             }
             ArrayList<Entry> values = new ArrayList<Entry>();
             for (int i = 0; i < 7; i++) {
-                int val = new Random().nextInt(4) + 30;
+                int val = new Random().nextInt(10) + 20;
                 if (z == 0) {
-                    val = new Random().nextInt(4) + 14;
+                    val = new Random().nextInt(10) + 10;
                 }
                 values.add(new Entry((float) val, i));
             }
@@ -128,28 +126,28 @@ public class TempDataSettingActivity extends Activity implements View.OnClickLis
 
         switch (v.getId()) {
             case R.id.btAddTempMax:
-                App.setValue(etTempMax, true, unit);
+                App.setTextValue(etTempMax, true, unit);
                 break;
             case R.id.btAddTempMin:
-                App.setValue(etTempMin, true, unit);
+                App.setTextValue(etTempMin, true, unit);
                 break;
             case R.id.btAddTempBox:
-                App.setValue(etTempBox, true, unit);
+                App.setTextValue(etTempBox, true, unit);
                 break;
             case R.id.btAddTempKitchen:
-                App.setValue(etTempkitchen, true, unit);
+                App.setTextValue(etTempkitchen, true, unit);
                 break;
             case R.id.btSubTempMax:
-                App.setValue(etTempMax, false, unit);
+                App.setTextValue(etTempMax, false, unit);
                 break;
             case R.id.btSubTempMin:
-                App.setValue(etTempMin, false, unit);
+                App.setTextValue(etTempMin, false, unit);
                 break;
             case R.id.btSubTempBox:
-                App.setValue(etTempBox, false, unit);
+                App.setTextValue(etTempBox, false, unit);
                 break;
             case R.id.btSubTempKitchen:
-                App.setValue(etTempkitchen, false, unit);
+                App.setTextValue(etTempkitchen, false, unit);
                 break;
         }
     }

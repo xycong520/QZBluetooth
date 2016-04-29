@@ -23,6 +23,7 @@
                     android:id="@+id/btRecord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:background="#0077cc"
                     android:padding="5dp"
                     android:text="出谷记录"
@@ -30,23 +31,25 @@
 
                 <CheckBox
                     android:id="@+id/cbChart"
+                    style="@style/checkbox_"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    style="@style/checkbox_"
-                    android:padding="10dp"
                     android:layout_marginRight="10dp"
                     android:checked="false"
+                    android:drawableLeft="@drawable/icon_radiobutton"
+                    android:padding="10dp"
                     android:text="曲线" />
 
                 <CheckBox
                     android:id="@+id/cbNum"
                     style="@style/checkbox_"
-                    android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/cbChart"
                     android:checked="true"
+                    android:drawableLeft="@drawable/icon_radiobutton"
+                    android:padding="10dp"
                     android:text="数值" />
 
 
@@ -54,16 +57,16 @@
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/barchat"
-                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="200dp"
+                android:visibility="gone" />
+
             <GridView
                 android:id="@+id/gridlayout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_weight="1"
-                android:numColumns="8"
-                />
+                android:numColumns="8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

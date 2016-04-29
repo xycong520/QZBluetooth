@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -35,7 +36,9 @@ public class MyAlertDialog implements View.OnClickListener {
         this.layoutID = layoutID;
         view = LayoutInflater.from(mContext).inflate(layoutID, null);
         dialog = new AlertDialog.Builder(mContext).create();
+//        dialog.setContentView(view);
         dialog.show();
+        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
         dialog.getWindow().setContentView(view);
         if (layoutID != R.layout.layout_dialog_outgrain) {
             view.findViewById(R.id.ivRight).setOnClickListener(this);
@@ -44,6 +47,42 @@ public class MyAlertDialog implements View.OnClickListener {
             etNum = (EditText) view.findViewById(R.id.etNum);
             view.findViewById(R.id.btSure).setOnClickListener(this);
             view.findViewById(R.id.tvSetting).setOnClickListener(this);
+            view.findViewById(R.id.btSub).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String unit ="克";
+                    switch (curCheck) {
+                        case R.id.rbWeight:
+                            unit = "克";
+                            break;
+                        case R.id.rbBowl:
+                            unit = "碗";
+                            break;
+                        case R.id.rbCal:
+                            unit = "Cal";
+                            break;
+                    }
+                    App.setValue(etNum, false, unit);
+                }
+            });
+            view.findViewById(R.id.btAdd).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String unit ="克";
+                    switch (curCheck) {
+                        case R.id.rbWeight:
+                            unit = "克";
+                            break;
+                        case R.id.rbBowl:
+                            unit = "碗";
+                            break;
+                        case R.id.rbCal:
+                            unit = "Cal";
+                            break;
+                    }
+                    App.setValue(etNum, true, unit);
+                }
+            });
             ((RadioGroup) view.findViewById(R.id.rgOutGrain)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -138,10 +177,10 @@ public class MyAlertDialog implements View.OnClickListener {
                 } else {
                     Toast.makeText(mContext, "请先连接设备", Toast.LENGTH_SHORT).show();
                 }
-        break;
-        case R.id.tvSetting:
-        mContext.startActivity(new Intent(mContext, OutGrainSettingActivity.class));
-        break;
+                break;
+            case R.id.tvSetting:
+                mContext.startActivity(new Intent(mContext, OutGrainSettingActivity.class));
+                break;
+        }
     }
-}
 }

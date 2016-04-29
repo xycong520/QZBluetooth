@@ -31,6 +31,7 @@ import com.qz.qizhi.MyAlertDialog;
 import com.qz.qizhi.NewsActivity;
 import com.qz.qizhi.R;
 import com.qz.qizhi.SettingActivity;
+import com.qz.qizhi.TempDataSettingActivity;
 import com.qz.qizhi.adapter.CommonAdapter;
 import com.qz.qizhi.adapter.ViewHolder;
 import com.qz.qizhi.kevin.app.App;
@@ -72,6 +73,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
 
 
     private void setTitle() {
+
         TextView tvTitle = (TextView) mLayout.findViewById(R.id.tvTitle);
         tvTitle.setText("我的设备");
         ImageButton btScan = (ImageButton) mLayout.findViewById(R.id.ibLeft);
@@ -90,7 +92,7 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         setTitle();
         mListView = (ListView) mLayout.findViewById(R.id.lvDivice);
         deviceList = new ArrayList<BeanDevice>();
-//        initDate();
+        initData();
         adapter = new CommonAdapter<BeanDevice>(mContext, deviceList, R.layout.item_device) {
             @Override
             public void convert(ViewHolder holper, BeanDevice item) {
@@ -142,10 +144,12 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
                                 new MyAlertDialog(mContext,R.layout.layout_dialog_keepingrain);
                                 break;
                             case 3://温度：
-                                new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
+                                startActivity(new Intent(mContext, TempDataSettingActivity.class).putExtra("title","温度"));
+//                                new MyAlertDialog(mContext,R.layout.layout_dialog_temp);
                                 break;
                             case 4://湿度：
-                                new MyAlertDialog(mContext,R.layout.layout_dialog_wet);
+                                startActivity(new Intent(mContext, TempDataSettingActivity.class).putExtra("title","湿度"));
+//                                new MyAlertDialog(mContext,R.layout.layout_dialog_wet);
                                 break;
                             case 5://复位：
                                 new MyAlertDialog(mContext,R.layout.layout_dialog_reset);
@@ -225,7 +229,9 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, BL
         function6.setFunIcon(R.mipmap.icon_jiance);
         functions.add(function6);
         deviceList.add(device);
-        adapter.notifyDataSetChanged();
+        if (adapter!=null){
+            adapter.notifyDataSetChanged();
+        }
     }
 
     /**

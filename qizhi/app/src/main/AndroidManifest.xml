@@ -48,21 +48,26 @@
             />
         <activity android:name=".OutGrainSettingActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".TempDataSettingActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             />
         <activity android:name=".GrainSpaceActivity"
             android:screenOrientation="portrait"
             />
         <activity android:name=".ShajunActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".JianceActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".ResetActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".BindDeviceActivity"
             android:screenOrientation="portrait"
@@ -75,9 +80,11 @@
             />
         <activity android:name=".SaveGrainActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".AddGrainTypeActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             />
         <activity android:name=".kevin.main.ModuleParameterActivity"
             android:screenOrientation="portrait"

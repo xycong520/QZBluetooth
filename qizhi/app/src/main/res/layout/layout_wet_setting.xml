@@ -114,12 +114,13 @@
                             android:layout_height="40dp"
                             android:background="@mipmap/icon_sub" />
 
-                        <EditText
-                            android:id="@+id/etTempMax"
-                            style="@style/editInputNumber"
+                        <TextView
+                            android:id="@+id/tvTempMax"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/btAddTempMax"
@@ -156,12 +157,13 @@
                             android:layout_height="40dp"
                             android:background="@mipmap/icon_sub" />
 
-                        <EditText
-                            android:id="@+id/etTempMin"
-                            style="@style/editInputNumber"
+                        <TextView
+                            android:id="@+id/tvTempMin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/btAddTempMin"
@@ -211,12 +213,13 @@
                             android:layout_height="40dp"
                             android:background="@mipmap/icon_sub" />
 
-                        <EditText
-                            android:id="@+id/etTempBox"
-                            style="@style/editInputNumber"
+                        <TextView
+                            android:id="@+id/tvTempBox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/btAddTempBox"
@@ -253,12 +256,13 @@
                             android:layout_height="40dp"
                             android:background="@mipmap/icon_sub" />
 
-                        <EditText
-                            android:id="@+id/etTempKitchen"
-                            style="@style/editInputNumber"
+                        <TextView
+                            android:id="@+id/tvTempKitchen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/btAddTempKitchen"

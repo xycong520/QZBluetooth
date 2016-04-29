@@ -30,6 +30,7 @@ public class SaveGrainActivity extends Activity implements View.OnClickListener 
         findViewById(R.id.ivWeight).setOnClickListener(this);
         findViewById(R.id.ivBox).setOnClickListener(this);
         findViewById(R.id.tvDate).setOnClickListener(this);
+        findViewById(R.id.tvSaveinTime).setOnClickListener(this);
     }
 
     private void setTitle() {

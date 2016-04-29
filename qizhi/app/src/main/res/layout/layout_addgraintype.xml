@@ -34,13 +34,13 @@
                     android:id="@+id/etNum"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:maxWidth="100dp"
-                    android:singleLine="true"
                     android:layout_margin="@dimen/dimen_10"
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
+                    android:maxWidth="100dp"
                     android:minWidth="100dp"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:text="" />
 
                 <View
@@ -55,12 +55,12 @@
                     android:text="扫码" />
 
                 <ImageView
+                    android:id="@+id/ivCammer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@mipmap/icon_camera"
-                     />
+                    android:padding="10dp"
+                    android:src="@mipmap/icon_camera" />
 
             </LinearLayout>
 
@@ -194,10 +194,10 @@
                     android:minWidth="100dp"
                     android:text="保质期" />
 
-                <TextView
+                <EditText
                     android:id="@+id/tvSaveTime"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/icon_layout_bg"
                     android:gravity="center"
@@ -234,13 +234,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:minWidth="100dp"
+                            android:minWidth="60dp"
                             android:text="建议比例" />
 
                         <TextView
@@ -269,7 +270,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
-                            android:layout_marginTop="5dp"
                             android:background="@drawable/icon_layout_bg"
                             android:gravity="center"
                             android:minWidth="80dp"
@@ -278,64 +278,55 @@
                     </LinearLayout>
 
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/tvkg"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
                             android:layout_margin="5dp"
-
-                            android:minWidth="100dp"
+                            android:minWidth="60dp"
                             android:text="个人口感" />
 
-                        <LinearLayout
-                            android:id="@+id/layoutBILI"
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/tvkg"
-                            android:orientation="horizontal">
+                            android:layout_margin="5dp"
+                            android:text="粥" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:text="粥" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/icon_layout_bg"
+                            android:gravity="center"
+                            android:minWidth="80dp"
+                            android:padding="5dp"
+                            android:text="5:1" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:background="@drawable/icon_layout_bg"
-                                android:gravity="center"
-                                android:minWidth="80dp"
-                                android:padding="5dp"
-                                android:text="5:1" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="饭" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:text="饭" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="15dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/icon_layout_bg"
-                                android:gravity="center"
-                                android:minWidth="80dp"
-                                android:padding="5dp"
-                                android:text="1.3：1" />
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/icon_layout_bg"
+                            android:gravity="center"
+                            android:minWidth="80dp"
+                            android:padding="5dp"
+                            android:text="1.3：1" />
 
 
-                    </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -348,7 +339,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -376,19 +368,22 @@
 
                 <RatingBar
                     android:id="@+id/rbXQ"
+                    style="@style/startBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/rbXQ"
-                    android:padding="@dimen/dimen_10"
+                    android:padding="@dimen/dimen_5"
                     android:text="香气" />
 
                 <RatingBar
                     android:id="@+id/rbND"
+                    style="@style/startBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -399,11 +394,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rbXQ"
                     android:layout_toLeftOf="@+id/rbND"
-                    android:padding="@dimen/dimen_10"
+                    android:padding="@dimen/dimen_5"
                     android:text="粘度" />
 
                 <RatingBar
                     android:id="@+id/rbYD"
+                    style="@style/startBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -414,26 +410,29 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rbND"
                     android:layout_toLeftOf="@+id/rbYD"
-                    android:padding="@dimen/dimen_10"
+                    android:padding="@dimen/dimen_5"
                     android:text="硬度" />
 
                 <RatingBar
                     android:id="@+id/rbSD"
+                    style="@style/startBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/rbYD" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rbYD"
                     android:layout_toLeftOf="@+id/rbSD"
-                    android:padding="@dimen/dimen_10"
+                    android:padding="@dimen/dimen_5"
                     android:text="色度" />
 
 
                 <RatingBar
                     android:id="@+id/rbXT"
+                    style="@style/startBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -444,7 +443,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rbSD"
                     android:layout_toLeftOf="@+id/rbXT"
-                    android:padding="@dimen/dimen_10"
+                    android:padding="@dimen/dimen_5"
                     android:text="形态" />
 
             </RelativeLayout>
